@@ -1,26 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started  
 
-Things you may want to cover:
+Follow the steps below to set up and run the project locally.
 
-* Ruby version
+### 1. Clone the Repository  
+git clone https://github.com/shandesh-ks/ecommerce-scraper-api.git  
+cd ecommerce-scraper-api  
 
-* System dependencies
+### 2. Install Dependencies
+bundle install  
 
-* Configuration
+### 3. Update Gems (Optional)
+To update all gems to the latest compatible versions, run:
+bundle update  
 
-* Database creation
+### 4. Set Up the Database
+rails db:create  
+rails db:migrate  
 
-* Database initialization
+### 5. Start the Server
+rails server  
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# ecommerce-scraper
+### The Rails server will start and run locally at: http://localhost:3001/
