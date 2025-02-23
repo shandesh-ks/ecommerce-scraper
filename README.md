@@ -22,4 +22,7 @@ rails db:migrate
 ### 5. Start the Server
 rails server  
 
+### 6. Start sidekiq for scheduled jobs
+sidekiq
+
 ### The Rails server will start and run locally at: http://localhost:3001/
