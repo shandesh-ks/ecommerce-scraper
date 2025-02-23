@@ -19,7 +19,7 @@ class ScraperService
       description: extract_meta_content(doc, 'og:description'),
       price: (doc.at('div[class*="Nx9bqj CxhGGd"]')&.text&.gsub('₹', '').gsub(',','').to_i.to_f rescue nil) || extract_price(doc),
       image: extract_meta_content(doc, 'og:image'),
-      size: (doc.at('li[id^="swatch-"] a')&.text&.strip rescue nil) || extract_sizes(doc).present? ? extract_sizes(doc) : nil,
+      size: (doc.at('li[id^="swatch-"] a')&.text&.strip rescue nil) || (extract_sizes(doc).present? ? extract_sizes(doc) : nil),
       category: ((doc.css('div.r2CdBx a').map(&:text) - ['Home']).first rescue nil),
       available_offers: available_offers(doc),
       offer_percentage: (doc.at('div[class*="UkUFwK WW8yVX dB67CR"]')&.text&.to_f rescue nil),
