@@ -25,8 +25,8 @@ class ScraperService
       offer_percentage: (doc.at('div[class*="UkUFwK WW8yVX dB67CR"]')&.text&.to_f rescue nil),
       rating: doc.css('div[class*="OVvZks"]').text == 'Be the first one to rate' ? 0 : doc.css('div[class*="ipqd2A"]')&.text.to_f,
       specifications: specifications(doc),
-      no_of_ratings: num_rat_rev_hash(doc)[0],
-      no_of_reviews: num_rat_rev_hash(doc)[1],
+      no_of_ratings: num_rat_rev_hash(doc)[0]&.gsub(',',''),
+      no_of_reviews: num_rat_rev_hash(doc)[1]&.gsub(',',''),
     }
 
     details
