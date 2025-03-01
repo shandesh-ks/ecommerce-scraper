@@ -29,22 +29,6 @@ Rails.application.configure do
     # config.cache_store = :redis_cache_store, { url: "redis://10.217.61.68:6379/0", namespace: "myapp_cache", expires_in: 1.month }
 
   end
-
-  config.action_dispatch.default_headers = {
-    "Cross-Origin-Embedder-Policy" => "unsafe-none",
-    "Cross-Origin-Opener-Policy" => "none",
-    "Cross-Origin-Resource-Policy" => "same-origin",
-    "Cache-Control" => "no-cache, no-store, must-revalidate",
-    "Content-Security-Policy" => "script-src 'self' *.experience.com *.socialsurvey.com https://www.google.com https://www.gstatic.com https://js-agent.newrelic.com https://bam-cell.nr-data.net https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-hashes'; object-src 'self' *.experience.com *.socialsurvey.com; base-uri 'self' ; frame-ancestors 'self';upgrade-insecure-requests;",
-    "Referrer-Policy" => "strict-origin-when-cross-origin",
-    "Strict-Transport-Security" => "max-age=31536000; includeSubdomains; preload",
-    "Permissions-Policy" => "geolocation=(self), camera=(self), microphone=(self), autoplay=(self)",
-    "X-Frame-Options" => "sameorigin",
-    "X-XSS-Protection" => "1; mode=block",
-    "X-Content-Type-Options" => "nosniff",
-    "X-Permitted-Cross-Domain-Policies" => "none",
-    "X-Download-Options" => "noopen"
-  }
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :google
 

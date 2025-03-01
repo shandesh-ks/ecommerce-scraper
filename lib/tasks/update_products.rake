@@ -1,8 +1,7 @@
-class UpdateProductsJob < ApplicationJob
-  queue_as :default
-
-  def perform
-    Rails.logger.info "running job"
+namespace :update_products do
+  desc "Run UpdateProductsJob"
+  task run: :environment do
+    p "running scheduler"
     outdated_products = Product.where("last_scraped_at < ?", 1.week.ago)
     outdated_products.each do |product|
       product_data = ScraperService.fetch_product_details(product.url)

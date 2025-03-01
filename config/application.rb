@@ -72,32 +72,6 @@ module EcommerceScraper
       #{Rails.root}/app/controllers/concerns/activity_feed/
     )
 
-    # ###################################################################### #
-    # CUSTOM CONFIGURATION: Configuration for other gems and libraries used
-    # ###################################################################### #
-    @rails_env = ENV['RAILS_ENV'] || 'development'
-    #config.hosts << "827d71f649ed.ngrok.io"
-
-
-    config.crypt = ActiveSupport::MessageEncryptor.new(secret_key_base[0..31], secret_key_base)
-    case @rails_env
-    when 'production'
-      config.ipro_api_key_secret_name = 'production_ipro_api_key_secret'
-    when 'uat'
-      config.ipro_api_key_secret_name = 'sandbox_ipro_api_key_secret'
-    when 'preprod'
-      config.ipro_api_key_secret_name = 'preprod_ipro_api_key_secret'
-    when 'test'
-      config.ipro_api_key_secret_name = 'test_ipro_api_key_secret'
-    when 'devtest'
-      config.ipro_api_key_secret_name = 'devtest_ipro_api_key_secret'
-    when 'development'
-      config.ipro_api_key_secret_name = 'dev_ipro_api_key_secret'
-    when 'qa'
-      config.ipro_api_key_secret_name = 'qa_ipro_api_key_secret'
-    else
-      raise "Application configuration error: Environment '#{@rails_env}' is unknown!"
-    end
     config.active_job.queue_adapter = :delayed
     config.action_controller.raise_on_open_redirects = false
   end

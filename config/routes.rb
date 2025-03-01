@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :products, only: [:create, :index]
+  require 'sidekiq/web'
 
+  mount Sidekiq::Web => "/sidekiq"
 end

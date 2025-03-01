@@ -1,4 +1,0 @@
-:schedule:
-  update_products:
-    cron: "0 0 * * *"   # Runs every day at 12:00 AM
-    class: "UpdateProductsJob"
